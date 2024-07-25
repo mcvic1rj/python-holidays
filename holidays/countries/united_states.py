@@ -570,6 +570,14 @@ class UnitedStates(ObservedHolidayBase, ChristianHolidays, InternationalHolidays
 
             # New Year's Eve
             self._add_observed(self._add_new_years_eve("New Year's Eve"))
+            
+        if self._year >2023:
+            # Day after Thanksgiving
+            self._add_holiday_1_day_past_4th_thu_of_nov("Day After Thanksgiving")
+            
+        # Election day
+        if self._year > 2023 and self._year % 2 == 0:
+            self._add_holiday_1_day_past_1st_mon_of_nov("Election Day")
 
     def _populate_subdiv_mn_public_holidays(self):
         pass
